@@ -16,7 +16,13 @@ Read in this order when resuming:
 3. `LEARNING_LOG.md` — weekly entries + PR links
 4. `docs/week-XX/` — detailed weekly notes and artifacts
 5. `GEMINI.md` — workflow rules for the agent in this repo
-6. `docs/engineering/` — technical manuals (e.g., [CI/CD Guide](docs/engineering/ci-cd.md))
+
+## Engineering Manuals
+
+Technical guides for maintaining and contributing to this repo:
+
+- **[CI/CD Guide](docs/engineering/ci-cd.md)**: How our GitHub Actions pipeline works.
+- **[PR Workflow](docs/engineering/pr-workflow.md)**: How to create, verify, and merge Pull Requests.
 
 ## Quickstart
 

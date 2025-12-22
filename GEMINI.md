@@ -13,6 +13,7 @@ This is a single, evolving project. Prefer small, reviewable changes.
 - No network calls in unit tests.
 - Use existing project conventions (ruff, pyright, pytest).
 - When you want to edit files, first propose: (1) which files, (2) what changes, (3) how we’ll verify.
+- Never run `git commit`, `git push`, or merge operations unless explicitly asked.
 
 ## Repo “memory” (read these first when helping)
 - PROJECT_STATE.md (where we are now)
@@ -25,6 +26,11 @@ This is a single, evolving project. Prefer small, reviewable changes.
 3) Implement
 4) Run: ruff, pyright, pytest
 5) Summarize changes + next step suggestion
+
+## Reusable prompts (repo macro library)
+- Reusable prompts live in prompts/ (version controlled).
+- Include them with @prompts/<name>.md instead of copy/pasting.
+- Default safety: do not run git commit / git push unless I explicitly ask.
 
 ## Commands I run often
 - `uv sync --dev`

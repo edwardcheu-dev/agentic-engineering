@@ -63,6 +63,12 @@ The codebase should only check whether the variable is set (never print the valu
 - Use `/memory show` to confirm which project memory files are loaded.
 - Checkpointing is enabled in `.gemini/settings.json`; use `/restore` if a tool edit goes wrong.
 
+## Reusable Prompts (Macro Library)
+This repo builds a library of standard operating procedures (SOPs) for the agent in `prompts/`.
+- **Why**: To standardize complex tasks (like preparing commits) and reduce typing.
+- **How**: Use `@prompts/<name>.md` to inject the instruction.
+- **Example**: `@prompts/commit_package.md` instructs the agent to prepare a commit without executing it.
+
 ## Security notes
 - Treat this repo as public forever.
 - No secrets in git history.

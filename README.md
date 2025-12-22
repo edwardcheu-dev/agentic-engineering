@@ -23,6 +23,7 @@ Read in this order when resuming:
 
 - Python 3.12+
 - `uv` installed: <https://docs.astral.sh/uv/>
+- `just` installed: <https://github.com/casey/just> (`brew install just`)
 
 ### Install dependencies
 
@@ -32,15 +33,13 @@ uv sync --dev
 
 ### Run the "PR gating" checks
 ```bash
-uv run ruff check .
-uv run ruff format --check .
-uv run pyright
-uv run pytest -q
+just check
 ```
+(Or run specific steps: `just fmt`, `just lint`, `just type`, `just test`)
 
 ### Run the CLI
 ```bash
-uv run ae doctor
+just doctor
 ```
 
 ## Environment variables (safe public-repo setup)
@@ -73,4 +72,4 @@ This repo builds a library of standard operating procedures (SOPs) for the agent
 - Treat this repo as public forever.
 - No secrets in git history.
 - `.geminiignore` reduces accidental secret exposure to agent tooling.
-- Gemini CLI supports `@<path>` for injecting file/dir content into prompts, and `!<cmd>` to run shell commands from inside the CLI. 
+- Gemini CLI supports `@<path>` for injecting file/dir content into prompts, and `!<cmd>` to run shell commands from inside the CLI.

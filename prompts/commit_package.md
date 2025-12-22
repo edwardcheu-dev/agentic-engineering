@@ -20,8 +20,8 @@ Checklist:
 
 Files touched (grouped by purpose: docs / config / code / tests).
 Commands to run before committing:
-If any Python code/tests changed: uv run ruff check ., uv run ruff format --check ., uv run pyright, uv run pytest -q
-If docs-only: propose the minimal verification commands.
+If any Python code/tests changed: just verify-code
+If docs-only: just verify-docs
 Risk notes:
 Call out any potential secret exposure (e.g., .env*, credentials files, tokens). Never print secret values; if a file may contain secrets, warn and stop.
 Verification (exact commands):

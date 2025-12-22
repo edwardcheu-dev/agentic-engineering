@@ -24,6 +24,13 @@ Technical guides for maintaining and contributing to this repo:
 - **[CI/CD Guide](docs/engineering/ci-cd.md)**: How our GitHub Actions pipeline works.
 - **[PR Workflow](docs/engineering/pr-workflow.md)**: How to create, verify, and merge Pull Requests.
 
+## Macro Library (Prompts)
+
+Standard Operating Procedures (SOPs) for the agent, located in `prompts/`:
+
+- **[@prompts/commit_package.md](prompts/commit_package.md)**: Analyzes changes and prepares a conventional commit package (message + staging plan) without executing it.
+- **[@prompts/prepare_weekly_review.md](prompts/prepare_weekly_review.md)**: Analyzes git history since the last tag to draft `LEARNING_LOG.md` updates and PR descriptions.
+
 ## Quickstart
 
 ### Prerequisites
@@ -73,12 +80,6 @@ The codebase should only check whether the variable is set (never print the valu
 - Use `!<cmd>` to run checks (e.g., `!git status`, `!uv run pytest -q`) and keep a tight verify loop.
 - Use `/memory show` to confirm which project memory files are loaded.
 - Checkpointing is enabled in `.gemini/settings.json`; use `/restore` if a tool edit goes wrong.
-
-## Reusable Prompts (Macro Library)
-This repo builds a library of standard operating procedures (SOPs) for the agent in `prompts/`.
-- **Why**: To standardize complex tasks (like preparing commits) and reduce typing.
-- **How**: Use `@prompts/<name>.md` to inject the instruction.
-- **Example**: `@prompts/commit_package.md` instructs the agent to prepare a commit without executing it.
 
 ## Security notes
 - Treat this repo as public forever.

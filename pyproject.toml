@@ -4,9 +4,7 @@ version = "0.1.0"
 description = "52-week agentic coding + LLM engineering journey (Python + Gemini CLI)"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = [
-    "python-dotenv>=1.2.1",
-]
+dependencies = []
 
 [dependency-groups]
 dev = [

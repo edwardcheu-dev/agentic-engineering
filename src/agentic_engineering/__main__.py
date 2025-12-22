@@ -2,8 +2,6 @@ from __future__ import annotations
 
 import argparse
 
-from dotenv import load_dotenv
-
 from .doctor import collect_doctor_report, render_doctor_report
 
 
@@ -24,7 +22,6 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: list[str] | None = None) -> int:
-    load_dotenv()
     parser = build_parser()
     args = parser.parse_args(argv)
     return int(args.func(args))

@@ -125,3 +125,26 @@ The fix: Add `python-dotenv`
       parser = build_parser()
   // ...existing code...
   ```
+
+- **Surprise: `python-dotenv` vs. Shell/Gemini CLI**
+  - Even after setting up `python-dotenv`, the Gemini CLI still couldn't find the API key. 
+  - **Realization**: `python-dotenv` only loads variables into the *Python process memory*. It doesn't export them to the shell, so external tools (like the Gemini CLI) or `echo` commands still see nothing.
+
+- **The Fix: `direnv` for Shell-Level Environment Management**
+  - To make the key available to *everything* in the terminal (Python, Gemini CLI, shell scripts), I switched to `direnv`.
+  - **The "Gotcha"**: Simply creating an `.envrc` with `dotenv` isn't enough. You must hook `direnv` into your shell.
+  - **Step 1**: Add the hook to `~/.zshrc`:
+    ```bash
+    echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc
+    ```
+  - **Step 2**: Allow the directory:
+    ```bash
+    direnv allow
+    ```
+
+- **Verification & Cleanup**
+  - Confirming the key is present in the shell:
+    ```bash
+    echo "${GEMINI_API_KEY:+set}"  # should print "set"
+    ```
+  - Now that `direnv` handles the environment globally for this folder, I have remove `python-dotenv` to keep the code lean and verifirf the main script still picks it up from the shell.

@@ -1,0 +1,26 @@
+# Prevent accidental exposure of secrets to Gemini CLI tools/context.
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+# Template (read)
+!.env.example
+
+# Common “oops” folders
+secrets/
+**/secrets/**
+
+# Local virtual env + caches
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.pyright/
+.mypy_cache/
+
+# Large / noisy stuff
+dist/
+build/
+*.egg-info/

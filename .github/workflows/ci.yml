@@ -20,17 +20,11 @@ jobs:
         with:
           enable-cache: true
 
+      - name: Install just
+        uses: extractions/setup-just@v2
+
       - name: Install dependencies
         run: uv sync --dev
 
-      - name: Lint
-        run: uv run ruff check .
-
-      - name: Format (check)
-        run: uv run ruff format --check .
-
-      - name: Typecheck
-        run: uv run pyright
-
-      - name: Tests
-        run: uv run pytest -q
+      - name: Run checks
+        run: just check

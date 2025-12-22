@@ -15,6 +15,26 @@
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 ```
+- Set up Google Cloud project, credentials and env varible for Gemini CLI.
+**Step 1: Set the active project in `gcloud`**
+gcloud config set project MY_PROJECT_ID
+```bash
+agentic-engineering % gcloud config set project MY_PROJECT_ID
+WARNING: Your active project does not match the quota project in your local Application Default Credentials file. This might result in unexpected quota issues.
+
+To update your Application Default Credentials quota project, use the `gcloud auth application-default set-quota-project` command.
+```
+
+gcloud auth application-default set-quota-project MY_PROJECT_ID
+gcloud auth application-default print-access-token >/dev/null && echo "ADC OK"
+gcloud config get-value project
+
+**Step 2: Set region defaults**
+gcloud config set ai/region global
+
+**Step 3: Log into the right account**
+gcloud auth login
+gcloud config get-value account
 
 ## Gemini CLI drills
 - [ ] Ran `/memory show`

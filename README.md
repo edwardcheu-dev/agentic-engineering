@@ -52,7 +52,8 @@ Setup:
 cp .env.example .env
 ```
 Then edit `.env` locally to set:
-- `GEMINI_API_KEY`
+- `GOOGLE_CLOUD_PROJECT`
+- `GOOGLE_CLOUD_LOCATION`
 The codebase should only check whether the variable is set (never print the value).
 
 ## Gemini CLI workflow (muscle-memory loop)

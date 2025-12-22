@@ -9,14 +9,16 @@ from dataclasses import dataclass
 class DoctorReport:
     python_version: str
     platform: str
-    gemini_api_key_set: bool
+    google_cloud_project_set: bool
+    google_cloud_location_set: bool
 
 
 def collect_doctor_report() -> DoctorReport:
     return DoctorReport(
         python_version=platform.python_version(),
         platform=platform.platform(),
-        gemini_api_key_set=bool(os.getenv("GEMINI_API_KEY")),
+        google_cloud_project_set=bool(os.getenv("GOOGLE_CLOUD_PROJECT")),
+        google_cloud_location_set=bool(os.getenv("GOOGLE_CLOUD_LOCATION")),
     )
 
 
@@ -26,6 +28,7 @@ def render_doctor_report(report: DoctorReport) -> str:
         "agentic-engineering doctor",
         f"- python_version: {report.python_version}",
         f"- platform: {report.platform}",
-        f"- GEMINI_API_KEY set: {report.gemini_api_key_set}",
+        f"- GOOGLE_CLOUD_PROJECT set: {report.google_cloud_project_set}",
+        f"- GOOGLE_CLOUD_LOCATION set: {report.google_cloud_location_set}",
     ]
     return "\n".join(lines) + "\n"

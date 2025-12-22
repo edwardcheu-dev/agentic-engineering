@@ -1,0 +1,36 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+    -   id: trailing-whitespace
+    -   id: end-of-file-fixer
+    -   id: check-yaml
+    -   id: check-added-large-files
+
+# Use local hooks to run checks via uv/just, ensuring consistent environment
+-   repo: local
+    hooks:
+    -   id: ruff-format
+        name: ruff format
+        entry: uv run ruff format --check
+        types: [python]
+        language: system
+    -   id: ruff-check
+        name: ruff check
+        entry: uv run ruff check
+        types: [python]
+        language: system
+    -   id: pyright
+        name: pyright
+        entry: uv run pyright
+        types: [python]
+        language: system
+        pass_filenames: false  # pyright checks the whole project
+    -   id: pytest
+        name: pytest
+        entry: uv run pytest -q
+        types: [python]
+        language: system
+        pass_filenames: false # pytest runs full suite

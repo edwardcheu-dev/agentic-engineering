@@ -32,6 +32,10 @@ test:
 doctor:
     uv run ae doctor
 
+# Install pre-commit hooks
+install-hooks:
+    uv run pre-commit install
+
 # === Pre-commit Verification Flows ===
 
 # Verify code changes (full suite)

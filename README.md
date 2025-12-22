@@ -42,6 +42,11 @@ just check
 just doctor
 ```
 
+### Setup Pre-commit hooks
+```bash
+uv run pre-commit install
+```
+
 ## Environment variables (safe public-repo setup)
 - Commit: `.env.example` (placeholders only)
 - Never commit: `.env` or any real secrets

@@ -36,6 +36,10 @@ doctor:
 install-hooks:
     uv run pre-commit install
 
+# Update pre-commit hooks to their latest versions
+update-hooks:
+    uv run pre-commit autoupdate
+
 # === Pre-commit Verification Flows ===
 
 # Verify code changes (full suite)

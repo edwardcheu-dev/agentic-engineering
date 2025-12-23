@@ -6,26 +6,26 @@ Keep this file current. It is the fastest way to resume work.
 
 - Week: 01
 - Theme: Repo scaffold + baseline checks
-- Status: Initial scaffold (update after first PR merge)
+- Status: Complete (PR ready)
 
 ## Week 01 acceptance checklist
 
 Repo + tooling:
 
-- [ ] Repo pushed to GitHub (`agentic-engineering`)
-- [ ] Install: `uv sync --dev`
-- [ ] Local checks pass:
-  - [ ] `uv run ruff check .`
-  - [ ] `uv run ruff format --check .`
-  - [ ] `uv run pyright`
-  - [ ] `uv run pytest -q`
-- [ ] GitHub Actions CI passes on PR and on `main`
+- [x] Repo pushed to GitHub (`agentic-engineering`)
+- [x] Install: `uv sync --dev`
+- [x] Local checks pass:
+  - [x] `uv run ruff check .`
+  - [x] `uv run ruff format --check .`
+  - [x] `uv run pyright`
+  - [x] `uv run pytest -q`
+- [x] GitHub Actions CI passes on PR and on `main`
 
 Documentation + memory:
 
-- [ ] `ROADMAP.md` exists and includes the 52-week plan
-- [ ] `LEARNING_LOG.md` has a Week 01 entry (even if short)
-- [ ] `docs/week-01/notes.md` updated with outputs and notes
+- [x] `ROADMAP.md` exists and includes the 52-week plan
+- [x] `LEARNING_LOG.md` has a Week 01 entry (even if short)
+- [x] `docs/week-01/notes.md` updated with outputs and notes
 
 ## Working agreements (do not drift)
 

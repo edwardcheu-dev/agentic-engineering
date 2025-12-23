@@ -17,7 +17,7 @@ labels: ["weekly"]
 - `uv run pytest -q`
 
 ## Gemini CLI drills
-- 
+-
 
 ## What I learned (top 3)
 1.

@@ -2,10 +2,10 @@
 Week: XX
 
 ## What changed
-- 
+-
 
 ## Why
-- 
+-
 
 ## Verification
 - [ ] `uv run ruff check .`

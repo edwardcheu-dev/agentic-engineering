@@ -47,9 +47,11 @@ uv sync --dev
 
 ### Run the "PR gating" checks
 ```bash
-just check
+just verify
 ```
-(Or run specific steps: `just fmt`, `just lint`, `just type`, `just test`)
+Or run specific suites:
+- **Code only**: `just verify-code` (lint, type, test)
+- **Docs only**: `just verify-docs` (links, format)
 
 ### Run the CLI
 ```bash

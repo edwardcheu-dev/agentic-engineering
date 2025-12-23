@@ -25,7 +25,10 @@ This is a single, evolving project. Prefer small, reviewable changes.
 1) Clarify goal + acceptance criteria
 2) Write/adjust tests
 3) Implement
-4) Run: ruff, pyright, pytest
+4) Verify:
+   - Code changes: `just verify-code`
+   - Doc changes: `just verify-docs`
+   - Mixed/Unsure: `just verify`
 5) Summarize changes + next step suggestion
 
 ## Reusable prompts (repo macro library)

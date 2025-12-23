@@ -22,6 +22,7 @@ Files touched (grouped by purpose: docs / config / code / tests).
 Commands to run before committing:
 If any Python code/tests changed: just verify-code
 If docs-only: just verify-docs
+If both/uncertain: just verify
 Risk notes:
 Call out any potential secret exposure (e.g., .env*, credentials files, tokens). Never print secret values; if a file may contain secrets, warn and stop.
 Verification (exact commands):

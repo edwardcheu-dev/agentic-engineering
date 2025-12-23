@@ -45,9 +45,11 @@ git push -u origin your-feature-name
 -   **Wait for CI**: Ensure the "ci" check passes (green checkmark).
 -   **Review**: Read your own diff one last time on the "Files changed" tab.
 -   **Merge**: Once satisfied, click "Squash and merge". This keeps the `main` history clean.
--   **Cleanup**: Delete the feature branch after merging.
+-   **Cleanup**:
+    1.  **Sync Local**: `git checkout main && git pull`
+    2.  **Delete Local Branch**: `git branch -D your-feature-name` (Use `-D` because squash-merges change commit IDs).
+    3.  **Delete Remote Branch**: Click "Delete branch" on GitHub or run `git push origin --delete your-feature-name`.
 
 ## Tips for Success
-- **Small PRs**: Prefer small, focused PRs over giant ones. They are easier to verify and reason about.
-- **Update Logs**: Every PR in this project should usually update `LEARNING_LOG.md` and the weekly notes.
-- **Draft PRs**: If you want to save your work but aren't ready to merge, use the "Convert to draft" option on GitHub.
+- **Auto-Delete Branches**: Enable "Automatically delete head branches" in GitHub Repo Settings -> General -> Pull Requests to skip the manual remote cleanup.
+- **Small PRs**: Prefer small, focused PRs over giant ones.

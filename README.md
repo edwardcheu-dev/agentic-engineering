@@ -23,6 +23,7 @@ Technical guides for maintaining and contributing to this repo:
 
 - **[CI/CD Guide](docs/engineering/ci-cd.md)**: How our GitHub Actions pipeline works.
 - **[PR Workflow](docs/engineering/pr-workflow.md)**: How to create, verify, and merge Pull Requests.
+- **[Git Tagging](docs/engineering/git-tagging.md)**: How to manage weekly tags (create, move, delete).
 
 ## Macro Library (Prompts)
 

@@ -40,6 +40,10 @@ install-hooks:
 update-hooks:
     uv run pre-commit autoupdate
 
+# Run pre-commit hooks on all files (useful for fixing whitespace/formatting)
+fix-hooks:
+    uv run pre-commit run --all-files
+
 # === Pre-commit Verification Flows ===
 
 # Verify code changes (full suite)

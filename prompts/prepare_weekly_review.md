@@ -45,9 +45,7 @@ Draft the title and body for the PR.
 Please present the drafts clearly:
 
 ### 1. Proposed `LEARNING_LOG.md` Entry
-```markdown
-(Markdown content here)
-```
+(Provide as plain text, no code blocks)
 
 ### 2. Proposed `PROJECT_STATE.md` Changes
 (Describe what lines to change or check off)
@@ -55,9 +53,7 @@ Please present the drafts clearly:
 ### 3. Proposed Pull Request
 **Title:** ...
 **Body:**
-```markdown
-(Markdown content here)
-```
+(Provide as plain text, no code blocks)
 
 ### 4. Verification
 - Confirm that `docs/week-XX/notes.md` exists and is populated.

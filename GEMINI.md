@@ -14,6 +14,7 @@ This is a single, evolving project. Prefer small, reviewable changes.
 - Use existing project conventions (ruff, pyright, pytest).
 - When you want to edit files, first propose: (1) which files, (2) what changes, (3) how we’ll verify.
 - Never run `git commit`, `git push`, or merge operations unless explicitly asked.
+- **Copy-paste safety**: Never provide content intended for copy-pasting (commit messages, PR descriptions, log entries) inside triple-backtick code blocks. Provide them as plain text to avoid automatic line-numbering in the terminal.
 
 ## Repo “memory” (read these first when helping)
 - PROJECT_STATE.md (where we are now)

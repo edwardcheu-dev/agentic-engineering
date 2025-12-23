@@ -49,9 +49,10 @@ fix-hooks:
 # Verify code changes (full suite)
 verify-code: check
 
-# Verify documentation changes (minimal check)
-verify-docs:
-    @echo "Verifying docs..."
-    @echo "- Check for broken links (manual)"
-    @echo "- Review rendered markdown"
-    git status
+# Verify documentation changes (formatting + link checking)
+verify-docs: fix-hooks
+    @echo "Verifying documentation links..."
+    lychee "**/*.md" --exclude-path ".venv"
+
+# Verify everything (code + docs)
+verify: verify-code verify-docs

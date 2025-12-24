@@ -12,8 +12,14 @@ This prompt guides the agent to update competency maturity scores based on new e
 ### 1. Update Traceability (Granular Scoring)
 For each competency that was exercised:
 1.  **Locate** the ID in `TRACEABILITY.md` (e.g., `ACW-03`).
-2.  **Verify Evidence**: Ensure specific file paths or PR links are listed in the Evidence column.
-3.  **Verify KB**: Ensure a KB artifact is linked (if claiming Score 2+).
+2.  **Verify Evidence (Crucial)**:
+    - If claiming **Score 1+**, Evidence MUST exist.
+    - **Check file existence**: The path (e.g., `tests/unit/`, `.github/workflows/ci.yml`) must exist.
+    - If the file is missing, **STOP**. Do not award Score 1.
+3.  **Verify KB (Crucial)**:
+    - If claiming **Score 2+**, a KB artifact MUST exist.
+    - **Check file existence**: The path must strictly follow `docs/kb/<DOMAIN>/<ID>/<artifact>.md`.
+    - If the file is missing, misnamed, or misplaced, **STOP**. Do not award Score 2. Flag it as a "Gap" or "KB only" status.
 4.  **Update Score (0-3)**:
     - **0**: Missing.
     - **1**: Ad-hoc (evidence exists, but no standard doc).
@@ -36,7 +42,7 @@ For any domain where a competency score changed:
 
 ### 3. Verification
 - Confirm that every Score > 0 has Evidence linked.
-- Confirm that every Score > 1 has a KB artifact linked.
+- Confirm that every Score > 1 has a valid, existing KB artifact linked in the correct path.
 
 ### 4. Next Steps
 - Propose quick wins, if any, to improve scores or coverage (e.g., add standard doc if evidence exists).

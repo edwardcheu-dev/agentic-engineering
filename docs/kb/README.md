@@ -2,20 +2,25 @@
 
 The KB is the repo’s **blueprint layer**: distilled knowledge that should still be true in 6 months.
 
+## Structure (Strict 1:1 Mapping)
+The KB mirrors the [Competency Map](../competency/COMPETENCY_MAP.md) exactly.
+Every artifact must live in: `docs/kb/<DOMAIN>/<COMPETENCY_ID>/`
+
+**Example:**
+- Domain: `ACW` (Agentic Coding Workflow)
+- Competency: `ACW-03` (Small diffs)
+- Path: `docs/kb/acw/acw-03/pr_workflow.md`
+
 ## What belongs here
-- Playbooks (step-by-step recipes + checklists)
-- Patterns (reusable architectures/design patterns)
-- Templates (ADR, eval spec, runbook, prompt template)
-- Reference implementations/snippets (minimal, reusable)
-- Glossaries (shared definitions: MCP/A2A/MAS/context engineering)
-- Risks/threat models/failure taxonomies
+- **Distilled Blueprints**: Playbooks, patterns, templates, and reference guides that explain *how* to satisfy a competency.
+- **Traceable Knowledge**: Every file here must link back to a Competency ID in `TRACEABILITY.md`.
 
 ## What does NOT belong here
-- Raw session notes (those belong in docs/weeks/)
+- Raw session notes (those belong in `docs/weeks/`)
 - One-off experiments without a generalized takeaway
+- Generic "misc" folders (no `engineering/`, no `scripts/`)
 
 ## How KB proves progress
-A KB page should reference:
-- which competency IDs it supports
-- the evidence (tests/evals/PRs) that back it up
-- optionally, which products used it
+A KB page proves you have "learned" a competency. It must reference:
+- The **Competency ID** it supports.
+- The **Evidence** (tests/evals/PRs) that validates it.

@@ -4,14 +4,18 @@ This is the recommended path through the KB once it exists.
 
 ## The intended flow
 1) Understand the competency system:
-   - docs/competency/COMPETENCY_MAP.md
-   - docs/competency/TRACEABILITY.md
+   - [Competency Map](../competency/COMPETENCY_MAP.md)
+   - [Traceability Matrix](../competency/TRACEABILITY.md)
 
-2) Learn the control-plane workflow:
+2) Navigate the KB via Competency IDs:
+   - Every artifact is stored in: `docs/kb/<DOMAIN>/<COMPETENCY_ID>/`
+   - Use the [KB Index](index.md) to browse active domains.
+
+3) Learn the control-plane workflow:
    - (TBD) playbook: Session bootstrap + verify + distill
 
-3) Learn the product loop:
-   - docs/products/README.md
+4) Learn the product loop:
+   - [Product Registry](../products/README.md)
    - product overview(s) under docs/products/<product>/
 
 ## Current status

@@ -38,7 +38,7 @@ Read in this order when resuming:
 9. `GEMINI.md` — how the agent should behave in this repo
 
 ## Rule of gravity (where things belong)
-- Still true in 6 months → **KB** (`docs/kb/`)
+- Still true in 6 months → **KB** (`docs/kb/<DOMAIN>/<COMPETENCY_ID>/`)
 - A decision with tradeoffs → **ADR** (`docs/decisions/`)
 - What happened / experiments tried → **Weeks** (`docs/weeks/`)
 

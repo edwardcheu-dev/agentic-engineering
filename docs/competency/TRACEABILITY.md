@@ -29,11 +29,11 @@ Tip: Keep links short and concrete. Prefer file paths over vague descriptions.
 
 | ID | Competency | Score (0-3) | KB artifact(s) | Evidence | Product usage | Status | Notes |
 |---|---|---|---|---|---|---|---|
-| ACW-01 | Session bootstrap discipline (goal → AC → plan → verify) | 0 |  |  |  | Not started |  |
-| ACW-02 | Context discipline (what to load, what not to load) | 0 |  |  |  | Not started |  |
+| ACW-01 | Session bootstrap discipline (goal → AC → plan → verify) | 1 |  | `GEMINI.md`, `prompts/session_bootstrap.md` |  | Evidence only |  |
+| ACW-02 | Context discipline (what to load, what not to load) | 1 |  | `AGENT_CONTEXT.md` |  | Evidence only |  |
 | ACW-03 | Small diffs + incremental commits | 2 | `docs/kb/acw/acw-03/pr_workflow.md` | This repo history |  | KB + Evidence |  |
 | ACW-04 | Failure triage loop (capture failing output, minimal fix, re-verify) | 0 |  |  |  | Not started |  |
-| ACW-05 | Prompt/tooling hygiene for the CLI itself (macros, reusable prompts) | 0 |  |  |  | Not started |  |
+| ACW-05 | Prompt/tooling hygiene for the CLI itself (macros, reusable prompts) | 1 |  | `prompts/`, `README.md` |  | Evidence only |  |
 
 ---
 

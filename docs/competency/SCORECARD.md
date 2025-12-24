@@ -11,7 +11,7 @@ Last updated: 2025-12-24
 ## Domain-level summary
 | Domain | Goal | Aggregate Score (0–3) | Notes |
 |---|---|---:|---|
-| ACW | Agentic Coding Workflow | 1 | Driven by ACW-03 (2) |
+| ACW | Agentic Coding Workflow | 1 | Driven by ACW-03 (2), ACW-01/02/05 (1) |
 | CTX | Context Engineering | 0 | |
 | MCP | Tooling & Protocol Interop (MCP) | 0 | |
 | AGT | Agent Architecture | 0 | |

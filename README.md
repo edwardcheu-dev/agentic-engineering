@@ -45,9 +45,9 @@ Read in this order when resuming:
 ## Engineering Manuals (legacy - to be migrated to `docs/kb/`)
 Technical guides for maintaining and contributing to this repo:
 
-- **[CI/CD Guide](docs/kb/engineering/ci-cd.md)**: How our GitHub Actions pipeline works.
-- **[PR Workflow](docs/kb/engineering/pr-workflow.md)**: How to create, verify, and merge Pull Requests.
-- **[Git Tagging](docs/kb/engineering/git-tagging.md)**: How to manage weekly tags (create, move, delete).
+- **[CI/CD Guide](docs/kb/ops/ops-01/ci_cd.md)**: How our GitHub Actions pipeline works.
+- **[PR Workflow](docs/kb/acw/acw-03/pr_workflow.md)**: How to create, verify, and merge Pull Requests.
+- **[Git Tagging](docs/kb/ops/ops-01/git_tagging.md)**: How to manage weekly tags (create, move, delete).
 
 ## Macro Library (Prompts)
 SOPs for the agent in `prompts/`:

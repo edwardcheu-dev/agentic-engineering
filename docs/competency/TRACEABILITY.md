@@ -31,7 +31,7 @@ Tip: Keep links short and concrete. Prefer file paths over vague descriptions.
 |---|---|---|---|---|---|---|
 | ACW-01 | Session bootstrap discipline (goal → AC → plan → verify) |  |  |  | Not started |  |
 | ACW-02 | Context discipline (what to load, what not to load) |  |  |  | Not started |  |
-| ACW-03 | Small diffs + incremental commits | `docs/kb/engineering/pr-workflow.md` | This repo history |  | KB + Evidence |  |
+| ACW-03 | Small diffs + incremental commits | `docs/kb/acw/acw-03/pr_workflow.md` | This repo history |  | KB + Evidence |  |
 | ACW-04 | Failure triage loop (capture failing output, minimal fix, re-verify) |  |  |  | Not started |  |
 | ACW-05 | Prompt/tooling hygiene for the CLI itself (macros, reusable prompts) |  |  |  | Not started |  |
 
@@ -182,7 +182,7 @@ Tip: Keep links short and concrete. Prefer file paths over vague descriptions.
 
 | ID | Competency | KB artifact(s) | Evidence | Product usage | Status | Notes |
 |---|---|---|---|---|---|---|
-| OPS-01 | CI/CD pipeline and release versioning | `docs/kb/engineering/ci-cd.md`, `docs/kb/engineering/git-tagging.md` | `.github/workflows/ci.yml` |  | KB + Evidence |  |
+| OPS-01 | CI/CD pipeline and release versioning | `docs/kb/ops/ops-01/ci_cd.md`, `docs/kb/ops/ops-01/git_tagging.md` | `.github/workflows/ci.yml` |  | KB + Evidence |  |
 | OPS-02 | Environment config strategy (dev/stage/prod) |  |  |  | Not started |  |
 | OPS-03 | Rollbacks and safe migrations |  |  |  | Not started |  |
 | OPS-04 | On-call basics / incident handling (even if “solo on-call”) |  |  |  | Not started |  |

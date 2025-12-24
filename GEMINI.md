@@ -20,7 +20,8 @@ Supporting:
 - Keep diffs small; propose staged plans if a change feels large.
 - Prefer: acceptance criteria → evidence/tests → implementation → verification.
 - Unit tests never make network calls.
-- Do not run `git commit`, `git push`, or merge unless explicitly asked.
+- **NEVER** run `git commit`, `git push`, or merge operations. These commands are strictly reserved for the human user to ensure full control over the version history.
+- **Copy-paste safety**: Never provide content intended for copy-pasting (commit messages, PR descriptions, log entries) inside triple-backtick code blocks. Provide them as plain text to avoid automatic line-numbering in the terminal.
 
 ## Definition of “learned” (enforced)
 For any meaningful work session / PR, you must be able to answer:

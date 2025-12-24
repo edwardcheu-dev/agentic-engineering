@@ -20,7 +20,7 @@ Last updated: 2025-12-24 (initial scaffold; scores are placeholders)
 ## Domain-level summary (optional, coarse)
 | Domain | Goal | Current level (0–3) | Notes |
 |---|---|---:|---|
-| ACW | Agentic Coding Workflow | 1 | Some workflow exists; not fully standardized yet |
+| ACW | Agentic Coding Workflow | 2 | Standardized with prompts/commit_package.md and PR workflow guide |
 | CTX | Context Engineering | 0 | Not started |
 | MCP | Tooling & Protocol Interop (MCP) | 0 | Not started |
 | AGT | Agent Architecture | 0 | Not started |
@@ -32,5 +32,5 @@ Last updated: 2025-12-24 (initial scaffold; scores are placeholders)
 | OBS | Observability | 0 | Not started |
 | SEC | Security / Prompt Injection Defense | 1 | Public-repo posture started; needs standardization |
 | CLP | Cost/Latency/Performance | 0 | Not started |
-| OPS | Deployment/Ops/Release | 1 | CI exists; release/ops not yet mature |
+| OPS | Deployment/Ops/Release | 2 | CI pipeline + guides (CI/CD, Tagging) are standardized |
 | GOV | Governance / Enterprise Readiness | 0 | Not started |

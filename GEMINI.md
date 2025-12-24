@@ -98,3 +98,4 @@ Whenever you propose a change, include:
 ## Output style
 - Be concrete: filenames, commands, small checklists.
 - Ask a single targeted question if something is ambiguous.
+- **No premature summaries**: Do not output draft commit packages or summaries before running verification. Only output the final package after verification is complete.

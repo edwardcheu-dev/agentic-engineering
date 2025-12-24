@@ -31,6 +31,18 @@ For any meaningful work session / PR, you must be able to answer:
 
 If it doesn’t include evidence + KB distillation, it is incomplete.
 
+## How we work (the loop)
+1) **Clarify goal + acceptance criteria**
+2) **Propose Plan**: Outline exactly which files will be touched and why. **WAIT for approval.**
+3) **Execute Edit**: Perform ONE edit (or a small batch of related edits).
+4) **WAIT for approval**: After each edit step, wait for the user to review and approve before proceeding.
+5) **Verify**:
+   - Code changes: `just verify-code`
+   - Doc changes: `just verify-docs`
+   - Mixed/Unsure: `just verify`
+6) **Finalize**: Execute `@prompts/commit_package.md` for final review and verification.
+7) **Human-only Git**: The human user performs all `git commit` and `git push` operations. The agent **NEVER** runs these commands.
+
 ## Always-load files (start here)
 Load these first (or request them if missing):
 - `AGENT_CONTEXT.md`

@@ -1,82 +1,71 @@
 # Learning Log — agentic-engineering
 
-## How to use this log
-Each week:
-- add one entry
-- link the PR
-- link `docs/week-XX/notes.md`
-- write the 3 biggest takeaways
+## What this log is
+A time-based record of what changed (PRs, outcomes, and what we learned).
+
+## What “progress” means in this repo
+Progress is competency-driven and traceable:
+- Competency Map: `docs/competency/COMPETENCY_MAP.md`
+- Scores: `docs/competency/SCORECARD.md`
+- Traceability (competency ↔ KB ↔ evidence ↔ products): `docs/competency/TRACEABILITY.md`
+
+## Recommended entry format (per week or per merged PR)
+- Dates (ISO week is preferred)
+- PR link(s)
+- Competency IDs touched
+- Evidence updated (tests/evals/docs/ADRs)
+- KB distillation created/updated
+- 3 takeaways
 
 ---
 
-## Week 01 — Repo scaffold + baseline checks
+## 2025-W52 — Repo scaffold + baseline checks (legacy Week 01)
 
-- Dates: Dec 22, 2025
-
+- Dates: 2025-12-22 to 2025-12-28
 - PR: (link)
+- Notes (legacy): docs/week-01/notes.md
+- Notes (target, later): docs/weeks/2025-W52/
 
-- Notes: docs/week-01/notes.md
+### Competency IDs touched (retro-mapped to the canonical v0 map)
+Agentic workflow:
+- ACW-01 Session bootstrap discipline
+- ACW-02 Context discipline
+- ACW-03 Small diffs + incremental commits
+- ACW-04 Failure triage loop
+- ACW-05 Prompt/tooling hygiene for CLI
 
+Evals / quality / ops:
+- EVAL-01 Unit tests for deterministic components
+- OPS-01 CI/CD pipeline and release versioning
 
+Security posture:
+- SEC-03 Secrets management & no-secret logging
 
-### Goal
+### Evidence updated
+- Local quality gates and verification loop (`ruff` / `pyright` / `pytest`, plus `just verify*`)
+- CI baseline on GitHub Actions
+- Engineering docs for CI/CD + PR workflow
 
-- Create repo scaffold and make `ruff`, `pyright`, and `pytest` pass locally and in CI.
+### KB distillation
+- Initial repo documentation exists, but KB is not yet established as a navigable blueprint.
+- Next PR creates the Learning Factory control plane and KB skeleton.
 
-- Establish a secure and effective authentication workflow for the Gemini CLI.
-
-
-
-### What shipped
-
-- **Repo Structure**: Standard Python `src/` layout with `uv` for dependency management.
-
-- **Tooling**: `ruff` (lint/format), `pyright` (types), `pytest` (tests), and `just` (task runner).
-
-- **Auth**: Switched from brittle `.env` API keys to robust Google Cloud ADC (`gcloud` auth).
-
-- **Automation**: `Justfile` for standard commands, `pre-commit` hooks for local checks, and GitHub Actions for CI.
-
-- **Documentation**: Engineering manuals for CI/CD and PR workflows, plus a "Macro Library" of reusable prompts.
-
-- **Workflow**: Automated weekly review generation via `@prompts/prepare_weekly_review.md`.
-
-
-
-### Commands I ran (copy/paste)
-
-- `just check`
-
-- `just doctor`
-
-- `just verify-code`
-
-- `just verify-docs`
-
-
+### Commands run (copy/paste)
+- just check
+- just doctor
+- just verify-code
+- just verify-docs
 
 ### Gemini CLI muscle drills
+- Ran /memory show
+- Used @README.md in a prompt
+- Ran !uv run pytest -q from inside Gemini CLI
+- Verified checkpointing + /restore exists
 
-- [x] Ran `/memory show`
+### Takeaways
+1. Verification loop discipline (fast local + CI) prevents drift.
+2. Public repo safety must be explicit everywhere (docs + agent rules), not assumed.
+3. Without traceability (competencies ↔ evidence ↔ KB), “learning” feels endless; the control plane fixes that.
 
-- [x] Used `@README.md` in a prompt
-
-- [x] Ran `!uv run pytest -q` from inside Gemini CLI
-
-- [x] Verified checkpointing + `/restore` exists
-
-
-
-### What I learned
-
-1. **Src Layout vs. Pytest**: `pytest` requires an editable install (via `hatchling` build backend) to correctly resolve imports in a `src/` layout.
-
-2. **Environment Variable Scope**: `python-dotenv` only affects the Python process; `direnv` is needed to inject variables into the shell for subprocesses (like the Gemini CLI).
-
-3. **Workflow Automation**: Delegating CI checks to a local task runner (`just`) ensures consistency between local dev and CI environments.
-
-
-
-### Next week
-
-- (To be defined in Week 02)
+### Next
+- PR1 (doc-only): Learning Factory control plane + canonical competency map + traceability skeleton.

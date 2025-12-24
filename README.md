@@ -1,24 +1,48 @@
 # agentic-engineering
 
-A 52-week, single evolving project to build practical muscle memory for:
-
+A long-lived, public “Learning Factory” to build practical muscle memory for:
 - Agentic coding workflows (using Gemini CLI)
-- LLM engineering in Python (tests, evals, RAG, reliability, CI)
+- Production-grade LLM + agentic applications (MCP / A2A / MAS / context engineering included)
 
-This repo is designed to be our shared long-term memory: you can paste the repo link and we can resume with full context.
+## The Learning Factory (how progress works)
+This repo is not a fixed calendar curriculum.
+
+It is a **traceable flywheel**:
+
+1) **Competency Map defines targets** (what “good” looks like + rubrics)
+2) **Products generate evidence** (apps built specifically to exercise competencies)
+3) **Knowledge Base distills reusable blueprints** (playbooks/patterns/templates/reference)
+
+Key rule:
+> Every competency must have **evidence** (code/evals) and **distillation** (KB artifact).
+> If it doesn’t, it’s not “learned,” it’s “experienced once.”
+
+Canonical sources of truth:
+- Competencies: `docs/competency/COMPETENCY_MAP.md`
+- Scores: `docs/competency/SCORECARD.md`
+- Traceability (competency ↔ KB ↔ evidence ↔ products): `docs/competency/TRACEABILITY.md`
+- KB index: `docs/kb/index.md`
+- Product registry: `docs/products/README.md`
 
 ## How to navigate (repo memory map)
-
 Read in this order when resuming:
 
-1. `PROJECT_STATE.md` — current week + what to do next
-2. `ROADMAP.md` — the full 52-week plan (kept current in git)
-3. `LEARNING_LOG.md` — weekly entries + PR links
-4. `docs/week-XX/` — detailed weekly notes and artifacts
-5. `GEMINI.md` — workflow rules for the agent in this repo
+1. `AGENT_CONTEXT.md` — the repo’s “north star” + always-load pointers
+2. `PROJECT_STATE.md` — what we’re doing now + next actions
+3. `docs/competency/COMPETENCY_MAP.md` — the targets (IDs + definitions)
+4. `docs/competency/TRACEABILITY.md` — what is proven vs missing
+5. `docs/kb/index.md` — the distilled blueprint knowledge
+6. `docs/products/README.md` — product registry + why each exists
+7. `LEARNING_LOG.md` — time-based record (PR links + competency IDs)
+8. `docs/weeks/YYYY-Www/` — raw weekly notes and artifacts
+9. `GEMINI.md` — how the agent should behave in this repo
 
-## Engineering Manuals
+## Rule of gravity (where things belong)
+- Still true in 6 months → **KB** (`docs/kb/`)
+- A decision with tradeoffs → **ADR** (`docs/decisions/`)
+- What happened / experiments tried → **Weeks** (`docs/weeks/`)
 
+## Engineering Manuals (legacy - to be migrated to `docs/kb/`)
 Technical guides for maintaining and contributing to this repo:
 
 - **[CI/CD Guide](docs/engineering/ci-cd.md)**: How our GitHub Actions pipeline works.
@@ -26,11 +50,15 @@ Technical guides for maintaining and contributing to this repo:
 - **[Git Tagging](docs/engineering/git-tagging.md)**: How to manage weekly tags (create, move, delete).
 
 ## Macro Library (Prompts)
+SOPs for the agent in `prompts/`:
 
-Standard Operating Procedures (SOPs) for the agent, located in `prompts/`:
-
-- **[@prompts/commit_package.md](prompts/commit_package.md)**: Analyzes changes and prepares a conventional commit package (message + staging plan) without executing it.
-- **[@prompts/prepare_weekly_review.md](prompts/prepare_weekly_review.md)**: Analyzes git history since the last tag to draft `LEARNING_LOG.md` updates and PR descriptions.
+- **[@prompts/commit_package.md](prompts/commit_package.md)**: Prepares a conventional commit package (message + staging plan) without executing it.
+- **[@prompts/prepare_weekly_review.md](prompts/prepare_weekly_review.md)**: Drafts `LEARNING_LOG.md` updates and PR descriptions from git history.
+- **[@prompts/session_bootstrap.md](prompts/session_bootstrap.md)**: Goal → acceptance criteria → competencies → plan → verify → distillation.
+- **[@prompts/score_competencies.md](prompts/score_competencies.md)**: Updates scorecard + gaps + smallest next deltas.
+- **[@prompts/distill_to_kb.md](prompts/distill_to_kb.md)**: Converts weekly notes into KB artifacts (+ ADR suggestions).
+- **[@prompts/create_adr.md](prompts/create_adr.md)**: Creates/updates an ADR with context + decision + consequences.
+- **[@prompts/migrate_three_pillars.md](prompts/migrate_three_pillars.md)**: Migration in PR-sized steps.
 
 ## Quickstart
 

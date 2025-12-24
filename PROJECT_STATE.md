@@ -2,58 +2,87 @@
 
 Keep this file current. It is the fastest way to resume work.
 
-## Current week
+## Current focus (as of 2025-12-24)
+**PR1 (doc-only): Learning Factory control plane + canonical competency map**
 
-- Week: 01
-- Theme: Repo scaffold + baseline checks
-- Status: Complete (PR ready)
+Goal: eliminate inconsistent “old roadmap” signals so Gemini (and future readers) understand:
+- this is a long-lived public repo
+- progress is measured by competency coverage
+- every competency needs evidence + KB distillation + product usage
 
-## Week 01 acceptance checklist
-
-Repo + tooling:
-
-- [x] Repo pushed to GitHub (`agentic-engineering`)
-- [x] Install: `uv sync --dev`
-- [x] Local checks pass:
-  - [x] `uv run ruff check .`
-  - [x] `uv run ruff format --check .`
-  - [x] `uv run pyright`
-  - [x] `uv run pytest -q`
-- [x] GitHub Actions CI passes on PR and on `main`
-
-Documentation + memory:
-
-- [x] `ROADMAP.md` exists and includes the 52-week plan
-- [x] `LEARNING_LOG.md` has a Week 01 entry (even if short)
-- [x] `docs/week-01/notes.md` updated with outputs and notes
-
-## Working agreements (do not drift)
-
+## Repo invariants (do not drift)
+- Public repo forever mindset.
 - No secrets in git (ever).
 - Keep diffs small; prefer incremental PRs.
-- Prefer: acceptance criteria → tests → implementation → verification.
+- Prefer: acceptance criteria → tests/evidence → implementation → verification.
 - Unit tests never make network calls.
 
-## Resume order (when coming back later)
+## Canonical navigation (the 3 pillars)
+1) Competency Map (North Star): `docs/competency/`
+2) Products (Vehicles): `docs/products/`
+3) Knowledge Base (Blueprint): `docs/kb/` (most important)
 
-1. `ROADMAP.md`
-2. `LEARNING_LOG.md`
-3. `docs/week-01/notes.md`
-4. `GEMINI.md`
+Supporting:
+- ADRs: `docs/decisions/`
+- Weekly raw notes: `docs/weeks/`
+
+## Resume order (when coming back later)
+1. `AGENT_CONTEXT.md`
+2. `PROJECT_STATE.md`
+3. `docs/competency/COMPETENCY_MAP.md`
+4. `docs/competency/TRACEABILITY.md`
+5. `docs/kb/index.md`
+6. `docs/products/README.md`
+7. `LEARNING_LOG.md`
+8. `docs/weeks/`
+9. `GEMINI.md`
+
+## PR1 acceptance checklist (doc-only)
+Control plane skeleton:
+- [ ] Add `AGENT_CONTEXT.md`
+- [ ] Add `docs/competency/`:
+  - [ ] `README.md`
+  - [ ] `COMPETENCY_MAP.md` (canonical map: ACW/CTX/MCP/AGT/MAS/A2A/DKE/EVAL/REL/OBS/SEC/CLP/OPS/GOV)
+  - [ ] `SCORECARD.md` (0–3 rubric)
+  - [ ] `TRACEABILITY.md` (competency ↔ KB ↔ evidence ↔ products)
+  - [ ] `ROADMAP.md` (iterative “next deltas”, optional)
+- [ ] Add `docs/products/README.md` (product registry + selection rubric)
+- [ ] Add `docs/kb/README.md`, `docs/kb/index.md`, `docs/kb/START_HERE.md`
+- [ ] Add `docs/weeks/README.md` (weekly notes conventions)
+- [ ] Add `docs/decisions/ADR-0000-template.md` (ADR template)
+
+Repo memory alignment:
+- [ ] Update `README.md` to describe the Learning Factory and link to canonical docs
+- [ ] Update `ROADMAP.md` (root) to deprecate the 52-week plan and point to canonical docs
+- [ ] Update `LEARNING_LOG.md` to track competency IDs + evidence + distillation
+- [ ] Update `GEMINI.md` so the agent:
+  - [ ] loads `AGENT_CONTEXT.md` + competency/traceability first
+  - [ ] always ties work to competency IDs
+  - [ ] enforces evidence + distillation
+
+Macro prompts (stubs are OK in PR1):
+- [ ] Add:
+  - [ ] `prompts/session_bootstrap.md`
+  - [ ] `prompts/score_competencies.md`
+  - [ ] `prompts/distill_to_kb.md`
+  - [ ] `prompts/create_adr.md`
+  - [ ] `prompts/migrate_three_pillars.md`
+
+Verification:
+- [ ] `just verify-docs` passes
 
 ## Next actions (do these in order)
+1. Create/update branch (doc-only):
+   - `git checkout -b docs/migration-01-gemini-awareness`
 
-1. Run checks and paste outputs into `docs/week-01/notes.md`:
+2. Apply the doc changes in this PR1 checklist.
 
-    - `uv sync --dev`
-    - `uv run ruff check .`
-    - `uv run ruff format --check .`
-    - `uv run pyright`
-    - `uv run pytest -q`
+3. Verify:
+   - `just verify-docs`
 
-2. Confirm `.env.example` is tracked and `.env` is ignored:
+4. Open PR, merge.
 
-    - `git check-ignore -v .env`
-    - `git check-ignore -v .env.example`
-
-3. Push to GitHub and paste the repo link.
+5. After merge:
+   - Run first calibration pass:
+     - update `docs/competency/SCORECARD.md` honestly (0/1 is fine)
+     - fill 5–10 rows in `docs/competency/TRACEABILITY.md` (start small)
